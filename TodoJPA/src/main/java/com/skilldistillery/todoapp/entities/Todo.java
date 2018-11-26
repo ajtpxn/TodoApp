@@ -1,7 +1,5 @@
 package com.skilldistillery.todoapp.entities;
 
-import java.util.Date;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -21,7 +19,7 @@ public class Todo {
 	
 	private String description;
 	
-	private boolean completed;
+	private Boolean completed;
 	
 	@ManyToOne
 	@JoinColumn(name="user_id")
@@ -33,12 +31,6 @@ public class Todo {
 	@Column(name="complete_date")
 	private String completeDate;
 	
-	@Column(name="created_at")
-	private Date createdAt;
-	
-	@Column(name="updated_at")
-	private Date updatedAt;
-
 	public int getId() {
 		return id;
 	}
@@ -63,11 +55,11 @@ public class Todo {
 		this.description = description;
 	}
 
-	public boolean isCompleted() {
+	public Boolean getCompleted() {
 		return completed;
 	}
 
-	public void setCompleted(boolean completed) {
+	public void setCompleted(Boolean completed) {
 		this.completed = completed;
 	}
 
@@ -95,22 +87,5 @@ public class Todo {
 		this.completeDate = completeDate;
 	}
 
-	public Date getCreatedAt() {
-		return createdAt;
-	}
-
-	public void setCreatedAt(Date createdAt) {
-		this.createdAt = createdAt;
-	}
-
-	public Date getUpdatedAt() {
-		return updatedAt;
-	}
-
-	public void setUpdatedAt(Date updatedAt) {
-		this.updatedAt = updatedAt;
-	}
-	
-	
 
 }
